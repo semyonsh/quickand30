@@ -5,7 +5,8 @@ A simple Godot (4.1) game inspired by a Petit Computer game I enjoyed playing on
 
 There are 30 panels, click from 1 to 30 in the shortest possible time. 
 
-![image](https://github.com/semyonsh/quickand30/assets/3471635/76acff0f-8827-4f57-b700-9ffc26bb3044)
+![image](https://github.com/semyonsh/quickand30/assets/3471635/545b3778-a781-43ed-9c4b-099d837fc1ce)
+
 
 ## Assets 
 
