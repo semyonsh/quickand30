@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dgn6lmtxpui6f"]
+
+[ext_resource type="FontFile" uid="uid://d2ku0ckg5fm3o" path="res://assets/fonts/PerfectDOSVGA437Win.ttf" id="1_ps81x"]
+
+[resource]
+font = ExtResource("1_ps81x")
+font_size = 32
+font_color = Color(1, 1, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.827451)
+shadow_offset = Vector2(2, 2)

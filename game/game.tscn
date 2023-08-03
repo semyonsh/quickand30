@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnlctkxx1tpth"]
+
+[ext_resource type="Script" path="res://game/game.gd" id="1_7nf4s"]
+[ext_resource type="PackedScene" uid="uid://p2guw2r3stu0" path="res://block/block.tscn" id="2_uijc0"]
+[ext_resource type="Texture2D" uid="uid://dnbvn0qixmkas" path="res://assets/block.png" id="3_tt1p1"]
+[ext_resource type="LabelSettings" uid="uid://dgn6lmtxpui6f" path="res://assets/cpc434-32.tres" id="4_h3n33"]
+
+[sub_resource type="Animation" id="Animation_aaddg"]
+resource_name = "flash"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gx348"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hxtty"]
+_data = {
+"RESET": SubResource("Animation_gx348"),
+"flash": SubResource("Animation_aaddg")
+}
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_7nf4s")
+block_scene = ExtResource("2_uijc0")
+
+[node name="BlockHolder" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.760784, 0.917647, 0.878431, 1)
+position = Vector2(577.5, 324.5)
+scale = Vector2(1261, 761)
+texture = ExtResource("3_tt1p1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -112.5
+offset_top = -50.0
+offset_right = 112.5
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 4
+
+[node name="time_label" type="Label" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "00:00"
+label_settings = ExtResource("4_h3n33")
+
+[node name="animation" type="AnimationPlayer" parent="CanvasLayer/MarginContainer/time_label"]
+libraries = {
+"": SubResource("AnimationLibrary_hxtty")
+}
