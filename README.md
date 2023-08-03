@@ -12,4 +12,5 @@ https://jdwasabi.itch.io/8-bit-16-bit-sound-effects-pack
 
 ### 30 Panels
 https://petitcomputer.fandom.com/wiki/30_Panels
+
 https://web.archive.org/web/20151105231742/http://wiki.hosiken.jp/petc/?Toukou%2F30%20Panels
