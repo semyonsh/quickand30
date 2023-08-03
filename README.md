@@ -7,8 +7,13 @@ There are 30 panels, click from 1 to 30 in the shortest possible time.
 
 ![image](https://github.com/semyonsh/quickand30/assets/3471635/76acff0f-8827-4f57-b700-9ffc26bb3044)
 
-### Sound assets by JDWasabi 
+## Assets 
+
+#### Sounds by JDWasabi 
 https://jdwasabi.itch.io/8-bit-16-bit-sound-effects-pack
+
+#### CCode Page 437 font
+https://cp437.github.io/
 
 ### 30 Panels
 https://petitcomputer.fandom.com/wiki/30_Panels
