@@ -14,7 +14,8 @@ script = ExtResource("1_jts2i")
 shape = SubResource("RectangleShape2D_7q2yw")
 
 [node name="block" type="Sprite2D" parent="."]
-modulate = Color(0.670588, 0, 0.309804, 1)
+modulate = Color(0.662745, 0.25098, 0.639216, 1)
+position = Vector2(2, -1)
 scale = Vector2(64, 64)
 texture = ExtResource("1_0c04o")
 
@@ -29,4 +30,3 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

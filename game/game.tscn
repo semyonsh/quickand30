@@ -1,9 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnlctkxx1tpth"]
+[gd_scene load_steps=10 format=3 uid="uid://dnlctkxx1tpth"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_7nf4s"]
 [ext_resource type="PackedScene" uid="uid://p2guw2r3stu0" path="res://block/block.tscn" id="2_uijc0"]
 [ext_resource type="Texture2D" uid="uid://dnbvn0qixmkas" path="res://assets/block.png" id="3_tt1p1"]
 [ext_resource type="LabelSettings" uid="uid://dgn6lmtxpui6f" path="res://assets/cpc434-32.tres" id="4_h3n33"]
+[ext_resource type="AudioStream" uid="uid://bbsd6e8ydw546" path="res://assets/Fruit collect 1.wav" id="5_wpvp8"]
+[ext_resource type="AudioStream" uid="uid://bhen0r3qbx8yc" path="res://assets/Boss hit 1.wav" id="6_fnem1"]
+
+[sub_resource type="Animation" id="Animation_gx348"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_aaddg"]
 resource_name = "flash"
@@ -21,21 +38,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_gx348"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hxtty"]
 _data = {
 "RESET": SubResource("Animation_gx348"),
@@ -49,8 +51,8 @@ block_scene = ExtResource("2_uijc0")
 [node name="BlockHolder" type="Node" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.760784, 0.917647, 0.878431, 1)
-position = Vector2(577.5, 324.5)
+modulate = Color(0.568627, 0.776471, 0.705882, 1)
+position = Vector2(578, 325)
 scale = Vector2(1261, 761)
 texture = ExtResource("3_tt1p1")
 
@@ -79,3 +81,61 @@ label_settings = ExtResource("4_h3n33")
 libraries = {
 "": SubResource("AnimationLibrary_hxtty")
 }
+
+[node name="try_again" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -17.5
+offset_right = 90.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Right-click to try again"
+label_settings = ExtResource("4_h3n33")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="high_score" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -45.0
+offset_top = 41.0
+offset_right = 45.0
+offset_bottom = 76.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "00:00"
+label_settings = ExtResource("4_h3n33")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="high_score2" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -108.0
+offset_right = 108.0
+offset_bottom = 35.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Highscore"
+label_settings = ExtResource("4_h3n33")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="correct" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_wpvp8")
+
+[node name="wrong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_fnem1")
